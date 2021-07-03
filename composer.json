@@ -26,7 +26,7 @@
         "ext-json": "*",
         "monolog/monolog": "^2.2",
         "php-di/php-di": "^6.3",
-        "slim/psr7": "^1.3",
+        "slim/psr7": "^1.4",
         "slim/slim": "^4.7"
     },
     "require-dev": {
