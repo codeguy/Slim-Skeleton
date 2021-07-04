@@ -1,5 +1,17 @@
++Options All –Indexes
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Redirect to HTTPS
+  # RewriteEngine On
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Some hosts may require you to use the `RewriteBase` directive.
   # Determine the RewriteBase automatically and set it as environment variable.
@@ -16,6 +28,7 @@
   # absolute physical path to the directory that contains this htaccess file.
   # RewriteBase /
 
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^ index.php [QSA,L]
 </IfModule>
